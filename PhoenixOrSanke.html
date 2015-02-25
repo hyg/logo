@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<style type="text/css">
+			#logo {
+					padding-top: 128;
+					margin: auto auto;
+					display: block;
+				}
+		</style>
+	</head>
+<body>
+
+	<canvas id="logo" width="256" height="256">你的浏览器不支持canvas!</canvas>
+	<script>
+			var myCanvas = document.getElementById("logo");
+			var context =  myCanvas.getContext("2d");
+			
+			context.lineWidth = 4;//线条的宽度 
+			context.strokeStyle ="#000000";
+
+			context.arc(128, 128, 64, (Math.PI/180)*8, (Math.PI/180)*172, false);
+			context.arc(128+128*Math.cos((Math.PI/180)*(172-106)/2)*Math.cos((Math.PI/180)*(172+106)/2), 128+128*Math.cos((Math.PI/180)*(172-106)/2)*Math.sin((Math.PI/180)*(172+106)/2), 64, (Math.PI/180)*286, (Math.PI/180)*352, false);
+
+			context.arc(128, 128, 80, (Math.PI/180)*106, (Math.PI/180)*172, false);
+			context.arc(128, 128, 80, (Math.PI/180)*172, (Math.PI/180)*106, true);
+
+			context.arc(128, 128, 96, (Math.PI/180)*106, (Math.PI/180)*172, false);
+			context.arc(128, 128, 96, (Math.PI/180)*172, (Math.PI/180)*106, true);
+			
+			context.arc(128, 128, 128, (Math.PI/180)*106, (Math.PI/180)*106, false);
+			context.arc(128, 128, 64, (Math.PI/180)*106, (Math.PI/180)*32, true);
+
+			context.arc(128+256*Math.cos((Math.PI/180)*32), 128+256*Math.sin((Math.PI/180)*32), 256-64, (Math.PI/180)*(180+32), (Math.PI/180)*(180+44), false);
+			
+			context.stroke();
+		</script>
+
+</body>
+</html>
