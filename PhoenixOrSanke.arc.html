@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<style type="text/css">
+			#logo {
+					padding-top: 16;
+					margin: auto auto;
+					display: block;
+				}
+		</style>
+	</head>
+<body>
+
+	<canvas id="logo" width="512" height="512">你的浏览器不支持canvas!</canvas>
+	<script>
+			var myCanvas = document.getElementById("logo");
+			var context =  myCanvas.getContext("2d");
+			
+			var r = 64;
+			var a1 = 8;
+			var a2 = 16;
+			
+			context.lineWidth = r/16;//线条的宽度 
+			context.strokeStyle ="#000000";
+
+			context.arc(r*2, r*2, r, (Math.PI/180)*a1, (Math.PI/180)*(180-a1), false);
+			context.arc(r*2+r*2*Math.cos((Math.PI/180)*(90-a1-a2)/2)*Math.cos((Math.PI/180)*(180-a1+90+a2)/2), r*2+r*2*Math.cos((Math.PI/180)*(90-a1-a2)/2)*Math.sin((Math.PI/180)*(180-a1+90+a2)/2), r, (Math.PI/180)*(270+a2), (Math.PI/180)*(360-a1), false);
+
+			context.arc(r*2, r*2, r*1.25, (Math.PI/180)*(90+a2), (Math.PI/180)*(180-a1), false);
+			context.arc(r*2, r*2, r*1.25, (Math.PI/180)*(180-a1), (Math.PI/180)*(90+a2), true);
+
+			context.arc(r*2, r*2, r*1.5, (Math.PI/180)*(90+a2), (Math.PI/180)*(180-a1), false);
+			context.arc(r*2, r*2, r*1.5, (Math.PI/180)*(180-a1), (Math.PI/180)*(90+a2), true);
+			
+			context.arc(r*2, r*2, r*2, (Math.PI/180)*(90+a2), (Math.PI/180)*(90+a2), false);
+			context.arc(r*2, r*2, r, (Math.PI/180)*(90+a2), (Math.PI/180)*a1*4, true);
+
+			context.arc(r*2+r*4*Math.cos((Math.PI/180)*a1*4), r*2+r*4*Math.sin((Math.PI/180)*a1*4), r*3, (Math.PI/180)*(180+a1*4), (Math.PI/180)*(180+a1*5.5), false);
+			
+			context.stroke();
+			
+			
+			context.lineWidth = 1;//线条的宽度 
+			context.strokeStyle ="#404040";
+
+			context.arc(r*2+r*4*Math.cos((Math.PI/180)*a1*4), r*2+r*4*Math.sin((Math.PI/180)*a1*4), r*3, (Math.PI/180)*(180+a1*5.5), (Math.PI/180)*(180+a1*4), false);
+			context.arc(r*2, r*2, r, (Math.PI/180)*a1*4, (Math.PI/180)*(180-a1),true);
+			context.arc(r*2+r*2*Math.cos((Math.PI/180)*(90-a1-a2)/2)*Math.cos((Math.PI/180)*(180-a1+90+a2)/2), r*2+r*2*Math.cos((Math.PI/180)*(90-a1-a2)/2)*Math.sin((Math.PI/180)*(180-a1+90+a2)/2), r, (Math.PI/180)*(270+a2), (Math.PI/180)*(360-a1), true);
+			context.arc(r*2, r*2, r*1.25, (Math.PI/180)*(90+a2), (Math.PI/180)*(180-a1), true);
+			context.arc(r*2, r*2, r*1.25, (Math.PI/180)*(180-a1), (Math.PI/180)*(90+a2), true);
+			context.arc(r*2, r*2, r*1.5, (Math.PI/180)*(90+a2), (Math.PI/180)*(180-a1), true);
+			
+			context.stroke();
+			
+		</script>
+
+</body>
+</html>
