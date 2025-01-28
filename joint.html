@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<style type="text/css">
+			#logo {
+					padding-top: 128;
+					margin: auto auto;
+					display: block;
+				}
+			#logo2,#logo3,#logo4 {
+					margin: auto auto;
+					display: block;
+				}				
+		</style>
+
+	</head>
+	<body>
+		<canvas id = "logo" width = '512' height = '512'>你的浏览器不支持canvas!</canvas>
+		<script>
+			var myCanvas = document.getElementById("logo");
+			var context =  myCanvas.getContext("2d");
+            
+            var d = 256 ;
+            myCanvas.width = d ;
+            myCanvas.height = d ;
+			
+			context.fillStyle='#004080';
+			context.fillRect(0,d*0.382,d,d*0.1);
+            context.fillStyle='#404040';
+			context.fillRect(0,d*0.5,d,d*0.1);
+            
+            context.fillStyle ="#DD9C00";
+			context.beginPath();
+			context.moveTo(d*0.5,d*0.85);
+			context.lineTo(d*0.1,d*0.25);
+			context.lineTo(d*0.9,d*0.25);
+			context.closePath();
+			context.fill();//填充颜色	
+		</script>
+
+	</body>
+</html>
